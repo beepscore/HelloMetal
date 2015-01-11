@@ -11,9 +11,13 @@ import Metal
 
 class ViewController: UIViewController {
 
+    // device must be an optional, because it's not set in init.
+    // Use ! to implicitly unwrap.
+    var device: MTLDevice! = nil
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        device = MTLCreateSystemDefaultDevice()
     }
 
     override func didReceiveMemoryWarning() {

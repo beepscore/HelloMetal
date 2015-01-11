@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE75D6DD1A6335BD003F2807 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = DE75D6DC1A6335BD003F2807 /* Shaders.metal */; };
 		DEEE0C681A6327E400357863 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE0C671A6327E400357863 /* AppDelegate.swift */; };
 		DEEE0C6A1A6327E400357863 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE0C691A6327E400357863 /* ViewController.swift */; };
 		DEEE0C6D1A6327E400357863 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEEE0C6B1A6327E400357863 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE75D6DC1A6335BD003F2807 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 		DEEE0C621A6327E300357863 /* HelloMetal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloMetal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEEE0C661A6327E400357863 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEEE0C671A6327E400357863 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			children = (
 				DEEE0C671A6327E400357863 /* AppDelegate.swift */,
 				DEEE0C691A6327E400357863 /* ViewController.swift */,
+				DE75D6DC1A6335BD003F2807 /* Shaders.metal */,
 				DEEE0C6B1A6327E400357863 /* Main.storyboard */,
 				DEEE0C6E1A6327E400357863 /* Images.xcassets */,
 				DEEE0C701A6327E400357863 /* LaunchScreen.xib */,
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE75D6DD1A6335BD003F2807 /* Shaders.metal in Sources */,
 				DEEE0C6A1A6327E400357863 /* ViewController.swift in Sources */,
 				DEEE0C681A6327E400357863 /* AppDelegate.swift in Sources */,
 			);
@@ -407,6 +411,7 @@
 				DEEE0C831A6327E500357863 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DEEE0C841A6327E500357863 /* Build configuration list for PBXNativeTarget "HelloMetalTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +420,7 @@
 				DEEE0C861A6327E500357863 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

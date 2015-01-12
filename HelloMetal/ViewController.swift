@@ -83,6 +83,8 @@ class ViewController: UIViewController {
         renderPassDescriptor.colorAttachments[0].loadAction = .Clear
         renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.0,
             green: 104.0/255.0, blue: 5.0/255.0, alpha: 1.0)
+
+        let commandBuffer = commandQueue.commandBuffer()
     }
     
     func gameloop() {

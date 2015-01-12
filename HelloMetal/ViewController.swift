@@ -25,6 +25,8 @@ class ViewController: UIViewController {
 
     var vertexBuffer: MTLBuffer! = nil
 
+    var pipelineState: MTLRenderPipelineState! = nil
+
     override func viewDidLoad() {
         super.viewDidLoad()
         device = MTLCreateSystemDefaultDevice()
@@ -38,6 +40,26 @@ class ViewController: UIViewController {
 
         let dataSize = vertexData.count * sizeofValue(vertexData[0])
         vertexBuffer = device.newBufferWithBytes(vertexData, length: dataSize, options: nil)
+
+        // configure render pipeline
+        let defaultLibrary = device.newDefaultLibrary()
+        let fragmentProgram = defaultLibrary!.newFunctionWithName("basic_fragment")
+        let vertexProgram = defaultLibrary!.newFunctionWithName("basic_vertex")
+
+        let pipelineStateDescriptor = MTLRenderPipelineDescriptor()
+        pipelineStateDescriptor.vertexFunction = vertexProgram
+        pipelineStateDescriptor.fragmentFunction = fragmentProgram
+        // error "objectAtIndexedSubscript is unavailable: use subscripting"
+        // pipelineStateDescriptor.colorAttachments.objectAtIndexedSubscript(0).pixelFormat = .BGRA8Unorm
+        pipelineStateDescriptor.colorAttachments[0].pixelFormat = .BGRA8Unorm
+
+        var pipelineError: NSError?
+        pipelineState = device.newRenderPipelineStateWithDescriptor(pipelineStateDescriptor,
+            error: &pipelineError)
+        if pipelineState == nil {
+            println("Failed to create pipeline state, error \(pipelineError)")
+        }
+
     }
 
     override func didReceiveMemoryWarning() {

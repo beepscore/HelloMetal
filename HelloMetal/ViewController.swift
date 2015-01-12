@@ -27,6 +27,8 @@ class ViewController: UIViewController {
 
     var pipelineState: MTLRenderPipelineState! = nil
 
+    var commandQueue: MTLCommandQueue! = nil
+
     override func viewDidLoad() {
         super.viewDidLoad()
         device = MTLCreateSystemDefaultDevice()
@@ -60,6 +62,7 @@ class ViewController: UIViewController {
             println("Failed to create pipeline state, error \(pipelineError)")
         }
 
+        commandQueue = device.newCommandQueue()
     }
 
     override func didReceiveMemoryWarning() {

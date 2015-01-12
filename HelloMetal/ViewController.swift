@@ -85,6 +85,17 @@ class ViewController: UIViewController {
             green: 104.0/255.0, blue: 5.0/255.0, alpha: 1.0)
 
         let commandBuffer = commandQueue.commandBuffer()
+
+        let renderEncoderOpt = commandBuffer.renderCommandEncoderWithDescriptor(renderPassDescriptor)
+        if let renderEncoder = renderEncoderOpt {
+            renderEncoder.setRenderPipelineState(pipelineState)
+            renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, atIndex: 0)
+
+            // draw the triangles in the vertex buffer
+            renderEncoder.drawPrimitives(.Triangle, vertexStart: 0, vertexCount: 3, instanceCount: 1)
+
+            renderEncoder.endEncoding()
+        }
     }
     
     func gameloop() {
